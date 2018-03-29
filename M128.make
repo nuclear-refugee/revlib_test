@@ -19,7 +19,8 @@ ASMFLAGS += -x assembler-with-cpp -Wa,-gdwarf2
 
 ## Linker flags
 LDFLAGS = $(COMMON)
-LDFLAGS += -Wl,-u,vfprintf  -Wl,-u,vfscanf -Wl,-Map=$*.map
+# LDFLAGS += -Wl,-u,vfprintf  -Wl,-u,vfscanf
+LDFLAGS += -Wl,-Map=$*.map
 
 ## Intel Hex file production flags
 HEX_FLASH_FLAGS = -R .eeprom -R .fuse -R .lock -R .signature
@@ -28,12 +29,12 @@ HEX_EEPROM_FLAGS += --set-section-flags=.eeprom="alloc,load"
 HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 ## Libraries
-LIBS = -lm -lprintf_flt -lscanf_flt
+# LIBS = -lm -lprintf_flt -lscanf_flt
 
 ## Objects that must be built in order to link
-LIBSRC = $(wildcard revlib/*.c)
-LIBSRC += $(wildcard revlib/ASA/*.c)
-LIBOBJS = $(patsubst %.c,%.o,$(LIBSRC))
+# LIBSRC = $(wildcard revlib/*.c)
+# LIBSRC += $(wildcard revlib/ASA/*.c)
+# LIBOBJS = $(patsubst %.c,%.o,$(LIBSRC))
 
 ## Objects explicitly added by the user
 LINKONLYLIBOBJS =

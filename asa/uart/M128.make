@@ -34,8 +34,9 @@ LIBS = -lm -lprintf_flt -lscanf_flt
 LIBSRC += ../../revlib/rev_uart.c
 LIBSRC += ../../revlib/rev_serial.c
 LIBSRC += ../../revlib/ASA/ASA_UARTM.c
-LIBSRC += ../../revlib/ASA/buffer.c
 LIBSRC += ../../revlib/ASA/ASA_general.c
+LIBSRC += ../../revlib/ASA/ASA_UART_PAC.c
+LIBSRC += ../../revlib/buffer.c
 LIBOBJS = $(patsubst %.c,%.o,$(LIBSRC))
 
 ## Objects explicitly added by the user

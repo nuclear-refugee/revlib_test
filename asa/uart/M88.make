@@ -34,7 +34,8 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 ## Objects that must be built in order to link
 LIBSRC += ../../revlib/rev_uart.c
 LIBSRC += ../../revlib/ASA/ASA_UARTS.c
-LIBSRC += ../../revlib/ASA/buffer.c
+LIBSRC += ../../revlib/ASA/ASA_UART_PAC.c
+LIBSRC += ../../revlib/buffer.c
 LIBOBJS = $(patsubst %.c,%.o,$(LIBSRC))
 
 ## Objects explicitly added by the user
